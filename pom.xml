@@ -125,10 +125,18 @@
         </pluginManagement>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>bintray-autentia-maven</id>
-            <url>https://api.bintray.com/maven/autentia/maven/${project.artifactId}/;publish=1</url>
-        </repository>
-    </distributionManagement>
+    <profiles>
+        <profile>
+            <!-- This profile is so you don't inherit this settings -->
+            <!-- To deploy this module use command: -->
+            <!--     mvn -P miconaut-parent-bintray-deploy clean install jar:jar deploy -->
+            <id>miconaut-parent-bintray-deploy</id>
+            <distributionManagement>
+                <repository>
+                    <id>bintray-autentia-maven</id>
+                    <url>https://api.bintray.com/maven/autentia/maven/${project.artifactId}/;publish=1</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
