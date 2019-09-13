@@ -128,7 +128,7 @@
     <distributionManagement>
         <repository>
             <id>bintray-autentia-maven</id>
-            <url>https://api.bintray.com/maven/autentia/maven/micronaut-base-parent/;publish=1</url>
+            <url>https://api.bintray.com/maven/autentia/maven/${project.artifactId}/;publish=1</url>
         </repository>
     </distributionManagement>
 </project>
