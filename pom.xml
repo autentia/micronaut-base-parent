@@ -131,10 +131,16 @@
             <!-- To deploy this module use command: -->
             <!--     mvn -P miconaut-parent-bintray-deploy clean install jar:jar deploy -->
             <id>miconaut-parent-bintray-deploy</id>
+
+            <properties>
+                <bintray.repo.url>https://api.bintray.com/maven/autentia/maven</bintray.repo.url>
+                <bintray.package.url>${bintray.repo.url}/${project.groupId}:${project.artifactId}</bintray.package.url>
+            </properties>
+
             <distributionManagement>
                 <repository>
                     <id>bintray-autentia-maven</id>
-                    <url>https://api.bintray.com/maven/autentia/maven/${project.artifactId}/;publish=1</url>
+                    <url>${bintray.package.url}/;publish=1</url>
                 </repository>
             </distributionManagement>
         </profile>
