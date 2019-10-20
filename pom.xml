@@ -6,17 +6,17 @@
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-bom</artifactId>
-        <version>1.2.1</version>
+        <version>1.2.5</version>
     </parent>
 
     <groupId>com.autentia</groupId>
     <artifactId>micronaut-base-parent</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.5</version>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>11</java.version>
-        <micronaut.version>1.2.1</micronaut.version>
+        <micronaut.version>1.2.5</micronaut.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
