@@ -6,52 +6,43 @@
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>2.2.1</version>
+        <version>2.4.2</version>
     </parent>
 
-    <groupId>com.autentia</groupId>
+    <groupId>io.archimedesfw.maven.micronaut</groupId>
     <artifactId>micronaut-base-parent</artifactId>
-    <version>2.2.1</version>
+    <version>2.4.2</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <jdk.version>11</jdk.version>
-        <release.version>11</release.version>
-        <lombok.version>1.18.16</lombok.version>
-    </properties>
-
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut. 
+        You should not use this module directly, instead here you can find two flavors: 
+        one for Java and the other for Kotlin. Both of them are ready for production use, 
+        but if you don't want to use them directly in your pom.xml you simply can look like it as an example.
+    </description>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
+    <developers>
+        <developer>
+            <id>alejandropg</id>
+            <name>Alejandro Pérez</name>
+        </developer>
+    </developers>
 
-    <repositories>
-        <repository>
-            <id>jcenter.bintray.com</id>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
+    <properties>
+        <jdk.version>11</jdk.version>
+        <release.version>11</release.version>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
 
-    <profiles>
-        <profile>
-            <!-- This profile is so you don't inherit this settings -->
-            <!-- To deploy this module use command: -->
-            <!--     mvn -P miconaut-parent-bintray-deploy clean install jar:jar deploy -->
-            <id>miconaut-parent-bintray-deploy</id>
+    <modules>
+        <module>micronaut-java-parent</module>
+        <module>micronaut-kotlin-parent</module>
+    </modules>
 
-            <properties>
-                <bintray.repo.url>https://api.bintray.com/maven/autentia/maven</bintray.repo.url>
-                <bintray.package.url>${bintray.repo.url}/${project.groupId}:${project.artifactId}</bintray.package.url>
-            </properties>
-
-            <distributionManagement>
-                <repository>
-                    <id>bintray-autentia-maven</id>
-                    <url>${bintray.package.url}/;publish=1</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
 </project>
